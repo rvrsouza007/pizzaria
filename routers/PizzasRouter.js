@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', PizzasController.listar)
 
-router.get('/pizza/busca', PizzasController.buscar)
+router.get('/pizzas/busca', PizzasController.buscar)
 
 router.get('/pizzas/:id',PizzasController.mostrar)
 

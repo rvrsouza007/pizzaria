@@ -11,13 +11,13 @@
 <body>
 	
 	<main>
-		<h1><%= pizza.nome %></h1>
+		<h1><%=pizza.nome%></h1>
 		<h2>R$ 33,90</h2>
-		<img src="/img/quatroqueijos.jpg" alt="Quatro Queijos">
+		<img src="<%=pizza.img%>" alt="<%=pizza.nome%>">
 		<div>Ingredientes: Quero 1, Queijo 2, Queijo 3 e Queijo 4</div>
 		<button>+ Add</button>
-		<a href="pizza.html" class="prev">&lt;</a>
-		<a href="pizza.html" class="next">&gt;</a>
+		<a href="/pizza/<%=idAterior%>" class="prev">&lt;</a>
+		<a href="/pizza/<%=idProcimo%>" class="next">&gt;</a>
 	</main>
 </body>
 </html>
