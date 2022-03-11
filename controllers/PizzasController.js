@@ -1,6 +1,6 @@
 const sabor = {
     listar:(req, res) => {
-        res.render('pizzas.ejs',{pizzas, buscar:''})
+        res.render('pizzas.ejs',{pizzas, busca:''})
     },
     mostrar:(req, res) => {
         let id = req.params.id
