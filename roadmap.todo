@@ -86,7 +86,7 @@ Fase 5 - Configurando o template engina e pasta de arquivos públicos:
         ✔ Verifique se o console está apresentando algum erro e se o nodemon está rodando. @done(22-03-10 13:28)
 
 Fase 6 - Retornando a página estática com pizzas:
-    ☐ No arquivo PizzasRouter.js:
+    ✔ No arquivo PizzasRouter.js: @done(22-03-10 22:01)
         ✔ Importe o PizzasController @done(22-03-10 13:41)
         ✔ Crie uma rota get para '/' direcionando a requisição para PizzasController.listar @done(22-03-10 13:37)
     ✔ No objeto literal que está no PizzasController.js, crie uma função chamada listar @done(22-03-10 13:43)
@@ -206,19 +206,19 @@ Fase 12 - Exibindo pizzas buscadas:
     ✔ No PizzasRouter.js, crie uma rota get para /pizzas/busca. @done(22-03-10 15:50)
         Essa rota deve direcionar a requisição para PizzasController.buscar
         Ela deve ser definida ANDTES da rota '/pizzas/:id'. Por que?
-    ☐ No objeto do PizzasController.js crie uma função buscar.
+    ✔ No objeto do PizzasController.js crie uma função buscar. @done(22-03-10 18:11)
         Essa função deve:
-            ☐ Capturar o que o usuário digitou no campo de busca e guardar na variável trechoBuscado
+            ✔ Capturar o que o usuário digitou no campo de busca e guardar na variável trechoBuscado @done(22-03-10 20:52)
                Dica: Dê um console.log(req.query) e veja o conteúdo desse objeto.
-            ☐ Se o trechoBuscado for vazio, redirecione o usuário para a rota '/'
+            ✔ Se o trechoBuscado for vazio, redirecione o usuário para a rota '/' @done(22-03-10 20:52)
                 Dica: res.redirect(___)
-            ☐ Se trechoBuscado não for vazio:
-                - Filtre do array de pizzas todas as pizzas que tem no nome o trechoBuscado
+            ✔ Se trechoBuscado não for vazio: @done(22-03-10 20:52)
+                ✔ Filtre do array de pizzas todas as pizzas que tem no nome o trechoBuscado @done(22-03-10 22:01)
                     Atenção: A busca não deve ser sensível ao caso, ou seja, 
                     buscando por 'm' deve encontrar 'Marguerita', mesmo tendo-se
                     buscado pela letra minúscula
-                - Armazene o resultado dessa filtragem numa variável resultado
-                - Renderize a view pizzas.ejs passando para ela um objeto literal contendo:
+                ✔ Armazene o resultado dessa filtragem numa variável resultado @done(22-03-10 22:01)
+                ✔ Renderize a view pizzas.ejs passando para ela um objeto literal contendo: @done(22-03-10 22:01)
                     1. Um campo de nome pizzas e de valor igual a variável resultado.
                     2. Um campo de nome busca com o valor igual a variável trechoBuscado.
                 Dica: res.render('pizzas.ejs',{campo1: valor1, campo2: valor2})
@@ -227,7 +227,7 @@ Fase 12 - Exibindo pizzas buscadas:
         Devem aparecer somente as pizzas Baiana e Meat & Bacon
 
 Fase 13 - Exibindo mensagem de específica quando nenhuma pizza for encontrada:
-    ☐ No pizzas.ejs:
+    ✔ No pizzas.ejs: @done(22-03-10 21:10)
         Crie um elemento por cento e nele um if que testa se
         o tamanho do array de pizzas é zero. Caso seja, mostrar mensagem...
         <div class="pizza-nao-encontrada">Nenhuma pizza encontrada. Tente ser menos específico na sua busca.</div>
@@ -238,23 +238,23 @@ Fase 13 - Exibindo mensagem de específica quando nenhuma pizza for encontrada:
         específico na sua busca."
 
 Fase 14 - Fazendo com que o que o usuário digitou na busca não seja perdido:
-    ☐ Na view  pizzas.ejs altere o elemento input type="text" para que o atributo value mostre busca, caso busca não seja vazio.
-    ☐ No controller listar do PizzasController, além do array de pizzas, passe um campo "busca" com o valor '' (string vazia).
+    ✔ Na view  pizzas.ejs altere o elemento input type="text" para que o atributo value mostre busca, caso busca não seja vazio. @done(22-03-10 21:34)
+    ✔ No controller listar do PizzasController, além do array de pizzas, passe um campo "busca" com o valor '' (string vazia). @done(22-03-10 21:34)
 
 Fase 15 - Passando de uma pizza para outra:
     Nessa fase, faremos com que na página que exibe os detalhes de
     uma pizza, seja possível navegar para a próxima pizza e para
     a pizza anterior clicando nos links em forma de seta
-    ☐ Na função mostrar no arquivo PizzasController:
-        - Declare duas variáveis: idProxima e idAnterior 
-        - Capture o id da pizza a partir da URL na variável id (Esse passo já foi dado... req.params.id)
-        - Determine a posição da pizza que tem o id desejado (Dica: Use a função findIndex) e guarde na variável posicao
-        - Guarde a pizza da posicao encontrada na variável pizza
-        - Se a posição da pizza encontrada for a última do array, idProxima deve receber o id da primeira pizza
-        - Caso contrário, idProxima deve ter o id da pizza da posição seguinte
-        - Se a posição da pizza envontrada for a primeira do array, o idAnterior deve receber o id da última pizza
-        - Caso controário, idAnterior deve receber o id da pizza na posição anterior.
-    ☐ No arquivo pizza.ejs, adeque os links:
+    ✔ Na função mostrar no arquivo PizzasController: @done(22-03-10 22:55)
+        ✔ Declare duas variáveis: idProxima e idAnterior @done(22-03-10 22:07)
+        ✔ Capture o id da pizza a partir da URL na variável id (Esse passo já foi dado... req.params.id) @done(22-03-10 22:11)
+        ✔ Determine a posição da pizza que tem o id desejado (Dica: Use a função findIndex) e guarde na variável posicao @done(22-03-10 22:33)
+        ✔ Guarde a pizza da posicao encontrada na variável pizza @done(22-03-10 22:41)
+        ✔ Se a posição da pizza encontrada for a última do array, idProxima deve receber o id da primeira pizza @done(22-03-10 22:55)
+        ✔ Caso contrário, idProxima deve ter o id da pizza da posição seguinte @done(22-03-10 22:55)
+        ✔ Se a posição da pizza encontrada for a primeira do array, o idAnterior deve receber o id da última pizza @done(22-03-10 22:55)
+        ✔ Caso controário, idAnterior deve receber o id da pizza na posição anterior. @done(22-03-10 22:55)
+    ✔ No arquivo pizza.ejs, adeque os links: @done(22-03-10 22:55)
         Onde se vê:
             <a href="pizza.html" class="prev">
         Deve se ver:
