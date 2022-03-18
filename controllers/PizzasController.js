@@ -1,32 +1,26 @@
-const sabor = {
-    listar:(req, res) => {
-        res.render('pizzas.ejs',{pizzas, busca:''})
+const PizzasControllers = {
+    listar:(req, res)=>{
+     res.render('pizzas.ejs',{pizzas,busca:''})
     },
-    mostrar:(req, res) => {
-        let id = req.params.id
-
-        let posicao = pizzas.indexOf (pizzas)
-
-        let idProxima = null
-        if (posicao < pizzas.length - 1) {
-            idProxima = pizzas[posicao + 1].id
+    mostrar:(req,res) =>{
+        let idProxima;
+        let idAnterior;
+        let id = req.params.id;
+        // let pizza = pizzas.find(p => p.id == id);
+        // res.render('pizza.ejs',{pizza});
+        let posicao = pizzas.findIndex(p => p.id == id);
+        let pizza = pizzas[posicao];
+        if(posicao == pizzas.length - 1){
+            idProxima = pizzas[0].id
+        } else {
+            idProxima = pizzas[posicao + 1].id;
         }
-
-        let idAnterior = null 
-        if (posicao > 0) {
-            idAnterior = pizzas[posicao - 1].id
+        if(posicao == 0){
+            idAnterior = pizzas[pizzas.length - 1].id;
+        } else {
+            idAnterior = pizzas[posicao - 1].id;
         }
-        const pizza = pizzas.find(buscar)
-        res.render('pizza.ejs',{pizza, posicao})
-
-        let buscar = pizzas => {
-            if(pizzas.id == id){
-                return true; 
-            }else {
-                false;
-            } 
-        };
-       
+        res.render('pizza.ejs',{pizza, idAnterior, idProxima});
     },
     buscar: (req,res) =>{
         let busca = req.query.q;
@@ -37,16 +31,10 @@ const sabor = {
             return res.redirect('/');
         }
  
-     }
-        
-    
-        
-
-
-}
+    }
+};
 
 
 const pizzas = require('../database/Pizzas.json')
 
-
-module.exports = sabor
+module.exports = PizzasControllers;
